@@ -1,5 +1,7 @@
 # Model Deployment
-###For deploying model, like bert...
+For deploying model, like bert...
 
-##Requirement
-  tesorflow == 1.15
+## Requirement
+
+ tensorflow == 1.15
+
