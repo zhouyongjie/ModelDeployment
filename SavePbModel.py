@@ -61,8 +61,8 @@ def restore_and_save(checkpoint_file, export_path):
                 graph.get_operation_by_name("segment_ids").outputs[0])
             dropout = tf.saved_model.utils.build_tensor_info(
                 graph.get_operation_by_name("dropout").outputs[0])
-            is_training = tf.saved_model.utils.build_tensor_info(
-                graph.get_operation_by_name("is_training").outputs[0])
+            # is_training = tf.saved_model.utils.build_tensor_info(
+            #     graph.get_operation_by_name("is_training").outputs[0])
             predict = tf.saved_model.utils.build_tensor_info(
                 graph.get_operation_by_name("predict/pre").outputs[0])
 
@@ -73,7 +73,7 @@ def restore_and_save(checkpoint_file, export_path):
                         'input_ids:0': input_ids,
                         'input_mask:0': input_mask,
                         'segment_ids:0': segment_ids,
-                        'is_training:0': is_training,
+                        # 'is_training:0': is_training,
                         'dropout:0': dropout,
                     },
                     outputs={
